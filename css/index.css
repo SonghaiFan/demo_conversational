@@ -1,0 +1,132 @@
+:root {
+  --primary: #302ae6;
+  --secondary: #03b976;
+  --font-color: white;
+  --bg-color: black;
+  --head-height: 30px;
+}
+
+/* Common
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html,
+body {
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  text-align: center;
+  scroll-behavior: smooth;
+  margin: auto;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+p {
+  margin: 1rem auto;
+  max-width: 75ch;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+a:hover {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background: var(--primary);
+  margin-bottom: 100px;
+}
+
+.header > h1 {
+  font-weight: bold;
+}
+
+#talking_ball {
+  width: 150px;
+  border-radius: 100%;
+}
+
+.sentence img {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.dialog_wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dialog_wrap > * {
+  width: fit-content;
+  margin-top: 10px;
+  padding: 5px 24px;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.author {
+  align-items: flex-start;
+}
+
+.reader {
+  align-items: flex-end;
+}
+
+.sentence {
+  max-width: 30ch;
+}
+
+.author > * {
+  background-color: #1c1c1c;
+  text-align: start;
+}
+
+.reader > * {
+  border: rgba(250, 247, 243, 0.12) solid 2px;
+  background-color: black;
+  text-align: end;
+}
+
+.multiple_selection {
+  display: flex;
+  gap: 30px;
+}
+
+button,
+input {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 1s;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 5px 24px;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 100px;
+  border: rgba(250, 247, 243, 0.12) solid 2px;
+  background-color: black;
+}
+
+button:hover {
+  border: rgb(255, 255, 255) solid 2px;
+}
+
+button:focus {
+  background-color: #1c1c1c;
+}
+
+.footer {
+  margin-top: 200px;
+  padding: 30px;
+  text-align: center;
+  background: var(--primary);
+}
