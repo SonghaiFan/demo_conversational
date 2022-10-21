@@ -90,12 +90,12 @@ a:hover {
   max-width: 30ch;
 }
 
-.author > * {
+.author {
   background-color: #1c1c1c;
   text-align: start;
 }
 
-.reader > * {
+.reader {
   border: rgba(250, 247, 243, 0.12) solid 2px;
   background-color: black;
   text-align: end;
