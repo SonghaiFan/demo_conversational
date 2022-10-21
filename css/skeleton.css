@@ -270,7 +270,7 @@ a:hover {
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,
+/* .button,
 button,
 input[type="submit"],
 input[type="reset"],
@@ -329,7 +329,7 @@ input[type="button"].button-primary:focus {
   color: #fff;
   background-color: #1eaedb;
   border-color: #1eaedb;
-}
+} */
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

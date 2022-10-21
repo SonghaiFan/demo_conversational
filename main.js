@@ -1,56 +1,70 @@
-const storyMetaData = [
+const dialogContainer = $("#dialog_container");
+
+function startConversation() {
+  popupDialogBubble(0);
+}
+
+function popupDialogBubble(dialogId) {
+  const dialogue = conversationMetaData.find(
+    (dialog) => dialog.id === dialogId
+  );
+
+  const dialog_wrap_div = $("<div/>", {
+    class: `dialog_wrap ${dialogue.speaker}`,
+  });
+
+  dialogContainer.append(dialog_wrap_div);
+
+  dialogue.sentence.forEach((sentence) => {
+    const sentence_div = $("<div/>", {
+      class: "sentence",
+    });
+
+    dialog_wrap_div.append(sentence_div);
+
+    sentence_div.append($(`<${sentence.type}/>`, { text: sentence.text }));
+  });
+
+  dialogue.query.forEach((query) => {
+    const query_div = $("<div/>", {
+      class: "reader",
+    });
+
+    dialog_wrap_div.append(query_div);
+
+    query_div.append($(`<${query.type}/>`, { text: query.text }));
+  });
+}
+
+const conversationMetaData = [
   {
-    dialogId: "0",
-    speaker: "Author",
-    sentence: [{ type: "p", text: "Hello." }],
-  },
-  {
-    dialogId: "1",
-    speaker: "Author",
+    id: 0,
+    speaker: "author",
     sentence: [
+      { type: "p", text: "Hello." },
+      { type: "p", text: "How are your?" },
+    ],
+    query: [
       {
-        type: "p",
-        text: ' Welcome to know "How are disadvantaged groups discussed in the Australian news media?',
+        type: "button",
+        text: "Hey! I'm fine. And you?",
+        setSate: { good: true },
+        goTo: 1,
       },
     ],
   },
   {
-    dialogId: "2",
-    speaker: "Reader",
+    id: 1,
+    speaker: "author",
     sentence: [
       {
         type: "p",
-        text: "Hey! I'm fine. Thanks for asking!",
-      },
-    ],
-  },
-  {
-    dialogId: "3",
-    speaker: "Author",
-    sentence: [
-      {
-        type: "p",
-        text: "Sweet!",
-      },
-      {
-        type: "p",
-        text: "So, what do you wanna do today?",
+        text: "I'm good. Thanks for asking!",
       },
     ],
   },
 ];
 
 $(document).ready(function () {
-  const dialogContainer = $("#dialog_container");
-  $.each(storyMetaData, function (key, value) {
-    console.log(value.dialogId);
-
-    const dialof_wrap_div = '<div class="dialog_wrap"></div>';
-    dialogContainer.append(dialof_wrap_div)
-    console.log(value.speaker);
-    value.sentence.forEach((element) => {
-      console.log(element.type);
-      console.log(element.text);
-    });
-  });
+  startConversation();
 });

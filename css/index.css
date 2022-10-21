@@ -52,10 +52,14 @@ a:hover {
 }
 
 .sentence img {
-  display: block;
+  display: inline-block;
   margin: 1rem auto;
   width: 100%;
   border-radius: 20px;
+}
+
+#dialog_container {
+  margin-bottom: 50%;
 }
 
 .dialog_wrap {
@@ -97,11 +101,6 @@ a:hover {
   text-align: end;
 }
 
-.multiple_selection {
-  display: flex;
-  gap: 30px;
-}
-
 button,
 input {
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -125,7 +124,6 @@ button:focus {
 }
 
 .footer {
-  margin-top: 200px;
   padding: 30px;
   text-align: center;
   background: var(--primary);
